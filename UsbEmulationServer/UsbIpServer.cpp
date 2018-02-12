@@ -1,5 +1,6 @@
 #include "UsbIpServer.h"
 #include <stdexcept>
+#include <UsbConnection.h>
 
 UsbIpServer::UsbIpServer(){
     qDebug() << "Starting USB IP server";
@@ -15,6 +16,6 @@ UsbIpServer::UsbIpServer(){
 void UsbIpServer::onNewConnection(){
     qDebug() << "USB IP server: new connection";
     auto socket = _tcpServer->nextPendingConnection();
-
+    auto connection = new UsbConnection(socket);
 }
 
