@@ -1,0 +1,3 @@
+[submodule "Dependencies/lframework"]
+	path = Dependencies/lframework
+	url = https://github.com/L-proger/lframework.git
