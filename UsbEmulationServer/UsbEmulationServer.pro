@@ -16,9 +16,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp \
     UsbIpServer.cpp \
-    UsbConnection.cpp
+    UsbConnection.cpp \
+    VirtualBulkDevice.cpp
 
 HEADERS += \
     UsbIpServer.h \
     UsbIpTypes.h \
-    UsbConnection.h
+    UsbConnection.h \
+    LFrameworkConfig.h \
+    VirtualBulkDevice.h \
+    UsbIpPhy.h
+
+HEADERS += $$files($$PWD/../Dependencies/lframework/*.h*, true)
+SOURCES += $$files($$PWD/../Dependencies/lframework/*.c*, true)
+
+INCLUDEPATH += $$PWD/../Dependencies/
